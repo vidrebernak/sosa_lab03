@@ -1,0 +1,41 @@
+Run started:2023-05-25 13:11:46.523745
+
+Test results:
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/blacklists/blacklist_calls.html#b307-eval
+   Location: dodatak_A.py:34:23
+33	    expression = input('Enter a mathematical formula to calculate: ')
+34	    print ("Result: ", eval(expression))
+35	
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '123'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.7.5/plugins/b105_hardcoded_password_string.html
+   Location: dodatak_A.py:40:37
+39	    password = getpass.getpass("Password: ")
+40	    if user != "root" or password != "123":
+41	        print("Wrong username or password!")
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 34
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 1
+		Medium: 1
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 1
+Files skipped (0):
